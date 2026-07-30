@@ -535,7 +535,7 @@
     ],
     "toolCount": 893,
     "triggerCount": 20,
-    "version": "20260721_00",
+    "version": "20260728_00",
     "tools": [
       {
         "slug": "GITHUB_ABORT_REPOSITORY_MIGRATION",
@@ -5521,7 +5521,7 @@
     ],
     "toolCount": 48,
     "triggerCount": 8,
-    "version": "20260721_00",
+    "version": "20260728_00",
     "tools": [
       {
         "slug": "NOTION_ADD_MULTIPLE_PAGE_CONTENT",
@@ -15375,7 +15375,7 @@
     ],
     "toolCount": 574,
     "triggerCount": 6,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "CANVAS_ABORT_QUIZ_REPORT_GENERATION",
@@ -28769,7 +28769,7 @@
     ],
     "toolCount": 83,
     "triggerCount": 9,
-    "version": "20260724_00",
+    "version": "20260728_00",
     "tools": [
       {
         "slug": "ONE_DRIVE_ADD_WORKBOOK_WORKSHEET",
@@ -28998,8 +28998,8 @@
       },
       {
         "slug": "ONE_DRIVE_LIST_ALL_DRIVE_ITEMS",
-        "name": "List All Drive Items Recursively",
-        "description": "Recursively lists all files and folders in a OneDrive drive by traversing the entire folder hierarchy. Starts at the drive root and explores every subfolder to return a complete flattened list of all items. Use this action when you need a comprehensive inventory of all drive contents, want to search across all folders, or need to analyze the complete drive structure. For large drives with thousands of items, this operation may take significant time as it must traverse every folder."
+        "name": "List All Drive Items",
+        "description": "Lists a complete OneDrive or SharePoint drive safely, one Microsoft Graph delta page per invocation. Start without `page_token`, then pass each `next_page_token` back until `sync_complete` is true. The terminal `delta_token` can be saved and passed back later to fetch changes since the completed snapshot. Delta enumeration is stable under concurrent writes and avoids the request burst caused by recursively fetching every folder in one execution."
       },
       {
         "slug": "ONE_DRIVE_LIST_BUNDLES",
@@ -32013,7 +32013,7 @@
     ],
     "toolCount": 223,
     "triggerCount": 7,
-    "version": "20260721_00",
+    "version": "20260728_00",
     "tools": [
       {
         "slug": "SALESFORCE_ACCOUNT_CREATION_WITH_CONTENT_TYPE_OPTION",
@@ -60310,7 +60310,7 @@
     ],
     "toolCount": 452,
     "triggerCount": 2,
-    "version": "20260721_00",
+    "version": "20260728_00",
     "tools": [
       {
         "slug": "ZENDESK_APPLY_ZENDESK_MACRO",
@@ -73691,11 +73691,12 @@
     "description": "A feature management platform that helps teams build better software faster using feature flags.",
     "category": "developer tools",
     "authSchemes": [
-      "API_KEY"
+      "API_KEY",
+      "OAUTH2"
     ],
     "toolCount": 248,
     "triggerCount": 0,
-    "version": "20260615_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "LAUNCH_DARKLY_ADD_MEMBER_TO_TEAMS",
@@ -74940,6 +74941,54 @@
     ],
     "triggers": [],
     "authConfigDetails": [
+      {
+        "mode": "OAUTH2",
+        "name": "launchdarkly_oauth",
+        "fields": {
+          "auth_config_creation": {
+            "required": [
+              {
+                "name": "client_id",
+                "displayName": "Client id",
+                "type": "string",
+                "description": "Client id of the app",
+                "required": true,
+                "default": null
+              },
+              {
+                "name": "client_secret",
+                "displayName": "Client secret",
+                "type": "string",
+                "description": "Client secret of the app",
+                "required": true,
+                "default": null
+              }
+            ],
+            "optional": [
+              {
+                "name": "oauth_redirect_uri",
+                "displayName": "Redirect URI",
+                "type": "string",
+                "description": "Add this Redirect URL to your app's OAuth allow list.",
+                "required": false,
+                "default": "https://backend.composio.dev/api/v1/auth-apps/add"
+              },
+              {
+                "name": "scopes",
+                "displayName": "Scopes",
+                "type": "string",
+                "description": "Scopes to request from the user, comma separated",
+                "required": false,
+                "default": "reader,writer,observability,offline_access"
+              }
+            ]
+          },
+          "connected_account_initiation": {
+            "required": [],
+            "optional": []
+          }
+        }
+      },
       {
         "mode": "API_KEY",
         "name": "launchdarkly_api_key",
@@ -77801,7 +77850,7 @@
     ],
     "toolCount": 22,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "SURVEY_MONKEY_CREATE_BULK_CONTACTS",
@@ -100081,7 +100130,7 @@
     ],
     "toolCount": 9,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "BITWARDEN_DELETE_GROUP",
@@ -105463,7 +105512,7 @@
     ],
     "toolCount": 84,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "BREX_ADD_WEBHOOK_GROUP_MEMBERS",
@@ -110774,7 +110823,7 @@
     ],
     "toolCount": 65,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260728_00",
     "tools": [
       {
         "slug": "DATADOG_AGGREGATE_LOGS",
@@ -146678,7 +146727,7 @@
     ],
     "toolCount": 384,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "COUPA_ABANDON_AN_INVOICE",
@@ -151977,7 +152026,7 @@
     ],
     "toolCount": 427,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "DATABRICKS_ADD_MEMBER_TO_SECURITY_GROUP",
@@ -176085,7 +176134,7 @@
     ],
     "toolCount": 8,
     "triggerCount": 0,
-    "version": "20260724_00",
+    "version": "20260728_00",
     "tools": [
       {
         "slug": "GEMINI_COUNT_TOKENS",
@@ -178346,7 +178395,7 @@
     ],
     "toolCount": 116,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "GITLAB_ADD_SPENT_TIME",
@@ -185297,7 +185346,7 @@
     ],
     "toolCount": 192,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "GUSTO_ADD_EMPLOYEES_TO_HOLIDAY_PAY_POLICY",
@@ -192158,7 +192207,7 @@
     ],
     "toolCount": 135,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "HUGGING_FACE_CHANGE_DISCUSSIONS_STATUS",
@@ -210536,7 +210585,7 @@
     ],
     "toolCount": 22,
     "triggerCount": 0,
-    "version": "00000000_00",
+    "version": "20260728_00",
     "tools": [
       {
         "slug": "MICROSOFT_TODO_COMPLETE_TASK",
@@ -224214,7 +224263,7 @@
     ],
     "toolCount": 78,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "PAYPAL_ACTIVATE_PLAN",
@@ -266007,9 +266056,9 @@
     "authSchemes": [
       "OAUTH2"
     ],
-    "toolCount": 10,
+    "toolCount": 9,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260728_00",
     "tools": [
       {
         "slug": "TIKTOK_FETCH_PUBLISH_STATUS",
@@ -266017,29 +266066,14 @@
         "description": "Check the processing status of a TikTok video or photo post using its publish_id. Use this action to poll the status of content after initiating an upload or post. The API returns detailed information about processing stages (upload, download, moderation) and any errors that occurred. Non-terminal statuses mean processing is still pending — never re-initiate TIKTOK_PUBLISH_VIDEO for the same publish_id. Use exponential backoff when polling (e.g., 5s→10s→20s) to avoid the 30 requests/minute per access token rate limit."
       },
       {
-        "slug": "TIKTOK_GET_ACTION_CATEGORIES",
-        "name": "Get action categories",
-        "description": "Tool to retrieve available action categories from TikTok Marketing API. Use when you need to get the list of conversion event categories for creating or managing TikTok ad campaigns with conversion tracking."
-      },
-      {
-        "slug": "TIKTOK_GET_TERM",
-        "name": "Get terms",
-        "description": "Tool to retrieve terms from TikTok Business API. Use when you need to fetch advertiser or agency terms for a specific advertiser ID."
-      },
-      {
         "slug": "TIKTOK_GET_USER_STATS",
         "name": "Get user stats",
         "description": "Fetches TikTok user information and statistics for the authenticated user. Retrieves user stats (follower_count, following_count, likes_count, video_count) and can optionally fetch profile fields (display_name, username, bio_description, etc.) and basic info (open_id, union_id, avatar URLs). Returns only the fields requested in the fields parameter. Only works for the authenticated account; cannot fetch arbitrary public profiles. Stats may be delayed and not reflect the most recent activity."
       },
       {
-        "slug": "TIKTOK_LIST_GMV_MAX_OCCUPIED_CUSTOM_SHOP_ADS",
-        "name": "List GMV Max occupied custom shop ads",
-        "description": "Tool to get GMV Max occupied custom shop ads list for a TikTok advertiser. Use this action when you need to retrieve information about which custom shop ads are currently occupied for GMV Max campaigns. This is part of the TikTok Business API and requires appropriate advertiser access."
-      },
-      {
         "slug": "TIKTOK_LIST_VIDEOS",
         "name": "List videos",
-        "description": "Lists videos for the authenticated user (or specified creator). Does not provide a global TikTok-wide feed."
+        "description": "Lists the authenticated user's own **public** TikTok videos, newest first. Only public posts are returned — private/`SELF_ONLY`, friends-only, and draft videos never appear (this is a property of the underlying `video.list` scope, not a bug), so on an account with no public posts the list is empty. Cannot list an arbitrary creator's videos, and does not provide a global TikTok-wide feed. Returns a single page (up to `max_count`, capped at 20). It does NOT auto-loop: when `has_more` is true, call again passing the returned `cursor` to fetch the next page. Accounts with more than `max_count` public videos are otherwise silently truncated."
       },
       {
         "slug": "TIKTOK_POST_PHOTO",
@@ -266052,9 +266086,19 @@
         "description": "Publishes a video to TikTok by pulling it from a public URL. TikTok downloads the video from the provided URL and publishes it directly to the creator's profile. Publishing is asynchronous — after calling this action, poll TIKTOK_FETCH_PUBLISH_STATUS with the returned publish_id to check completion. For uploading video files instead of URLs, use TIKTOK_UPLOAD_VIDEO."
       },
       {
+        "slug": "TIKTOK_QUERY_CREATOR_INFO",
+        "name": "Query creator info",
+        "description": "Queries the authenticated creator's info and current posting options. Returns the account's available `privacy_level_options` and interaction settings (comment/duet/stitch), which the Content Posting API requires you to read before a direct post — the valid `privacy_level` values for an account are only discoverable here. Call this to pick a real privacy level instead of guessing (unaudited apps only ever get SELF_ONLY)."
+      },
+      {
+        "slug": "TIKTOK_QUERY_VIDEOS",
+        "name": "Query videos",
+        "description": "Fetches metadata for specific TikTok videos by ID (1-20 per request). Verifies the videos belong to the authenticated user and returns their details, refreshing the cover-image URL's expiration. Unlike List videos, this looks up known video IDs rather than walking recent uploads."
+      },
+      {
         "slug": "TIKTOK_UPLOAD_VIDEO",
         "name": "Upload video",
-        "description": "Uploads a video to TikTok via the Content Posting API (init + single-part upload). This action initializes an upload session to obtain a presigned upload URL, then uploads the entire file with a single PUT request. Use a subsequent action to publish the post. Ensure the video file is fully generated and available before calling this action."
+        "description": "Uploads a video to TikTok via the Content Posting API (init + single-part upload). This action initializes an upload session to obtain a presigned upload URL, then uploads the entire file with a single PUT request. Files must be no larger than 64,000,000 bytes; TikTok requires larger files to use multi-chunk upload, which this action does not implement. Use a subsequent action to publish the post. Ensure the video file is fully generated and available before calling this action."
       },
       {
         "slug": "TIKTOK_UPLOAD_VIDEOS",
@@ -273717,7 +273761,7 @@
     ],
     "toolCount": 144,
     "triggerCount": 0,
-    "version": "20260721_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "WIX_ADD_SPECIAL_PERMISSIONS",
@@ -275213,7 +275257,7 @@
     ],
     "toolCount": 553,
     "triggerCount": 13,
-    "version": "20260724_00",
+    "version": "20260729_00",
     "tools": [
       {
         "slug": "WORKDAY_APPROVE_BUSINESS_PROCESS_EVENT_STEP",
